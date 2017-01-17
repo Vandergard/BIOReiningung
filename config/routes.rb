@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'users/new'
 
   #get 'present_informations/home'
   root 'present_informations#home'
+  resources :users
   match '/signup',  to: 'users#new',            via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
