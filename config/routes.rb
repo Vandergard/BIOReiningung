@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'technpassports/new'
+
+  get 'clients/new'
+
   #get 'present_informations/home'
   root 'present_informations#home'
   resources :users
+  resources :clients
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'

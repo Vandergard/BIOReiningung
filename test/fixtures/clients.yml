@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: 1
+  sum: 1
+  percent: 1
+  birth_date: 2017-01-18
+
+two:
+  name: MyString
+  phone: 1
+  sum: 1
+  percent: 1
+  birth_date: 2017-01-18
