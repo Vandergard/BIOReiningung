@@ -1,2 +1,27 @@
-<h1>Technpassports#new</h1>
-<p>Find me in app/views/technpassports/new.html.erb</p>
+<h1>Создание технологического паспорта</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@technpassport) do |f| %>
+     <%= render 'shared/error_messages2' %>
+
+      <%= f.label :"Заказчик" %>
+      <%= f.text_field :customer %>
+
+      <%= f.label :"Телефон" %>
+      <%= f.text_field :phone %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :"Изделие/комплектность" %>
+      <%= f.text_field :product %>
+
+      <%= f.label :"Дата_приема" %>
+      <%= f.text_field :date_in %>
+
+
+      <%= f.submit "Создать", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
