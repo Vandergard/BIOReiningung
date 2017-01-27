@@ -8,11 +8,14 @@ Rails.application.routes.draw do
   root 'present_informations#home'
   resources :users
   resources :clients
-  resources :technpassports
+  resources :technpassports do
+    resources :clients
+  end
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+  #get '/technpassports/:id', to: 'clients#create'
 
   #match '/create', to: 'technpassports#new',    via: 'get'
 

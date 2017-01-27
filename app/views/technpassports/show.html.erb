@@ -1,2 +1,69 @@
-<h1> show one Techn passport </h1>
-<p><%= @technpassport.customer %></p>
+<h1>ТЕХНОЛОГИЧЕСКИЙ ПАСПОРТ НА ЗАКАЗ № </b><%= @technpassport.id %> </h1>
+
+<p><b>Заказчик </b><%= @technpassport.vorname %> <%= @technpassport.name %> <%= @technpassport.patronymic %></p>
+<p><b>Телефон </b><%= @technpassport.phone %></p>
+<div class="form-group row-fluid">
+  <div class="span5"><p><b>Дата приема </b><%= @technpassport.date_in %> </p></div>
+  <div class="span5"><b>Дата выдачи </b><%= @technpassport.date_out %></p></div>
+</div>
+<p><b>Изделие/комплектность </b><%= @technpassport.product %></p>
+<p><b>Состояние фурнитуры </b><%= @technpassport.condition %></p>
+<p><b>Срок носки </b><%= @technpassport.time_weared %></p>
+<p><b>Символы по уходу: </b><%= @technpassport.care_symbols %></p>
+<blockquote><p>Ответственность за вред, причиненный заказчику вследствие недостоверной или недостаточной информации лежит на изготовителе, либо на продавце изделия, сдаваемого в чистку (ст. 1095 и ст. 1096 ГК РФ).</p></blockquote>
+<p><b>Износ </b><%= @technpassport.wear %>%</p>
+<p><b>Изделие подвергалось </b><%= @technpassport.undergo %></p>
+<p><b>Последствия </b><%= @technpassport.effects %></p>
+<p><b>Пятна </b><%= @technpassport.spots %></p>
+<p><b>Происхождение пятен со слов клиента </b><%= @technpassport.origin_spots %></p>
+<blockquote><p>Устранение пятен не гарантируется. Возможно проведение предварительной экспертизы.</p></blockquote>
+<p><b>Прочие деффекты </b><%= @technpassport.other_defects %></p>
+<p><b>Проблемы цвета кожи </b><%= @technpassport.pr_scin_color %></p>
+<p><b>Проблемы цвета меха </b><%= @technpassport.pr_fur_color %></p>
+<p><b>Неустранимые механические повреждения </b><%= @technpassport.f_mechanical_damage %><%= @technpassport.damage %></p>
+<blockquote><p>В случае сильного износа или ветхости изделия наше предприятие снимает с себя ответственность за возможные механические повреждения в процессе чистки.</p></blockquote>
+<p><b>Особо заношенные места и места сильной засаленности </b><%= @technpassport.worn_pl %></p>
+<blockquote><p>В особо заношенных местах и местах сильной засаленности возможно наличие скрытых дефектов (в том числе, в виде скрытых царапин и пятен, испорченного цвета и качества кожи).</p></blockquote>
+<p><b>Наши гарантии </b><%= @technpassport.guarantee %></p>
+<p><b>Повреждения </b><%= @technpassport.damage %></p>
+  <p><b>Работы</b></p>
+<div class="form-group row-fluid">
+  <div class="span4"><p><b>№1 </b><%= @technpassport.manipulation1 %></p></div>
+  <div class="span5"><b>Цена </b><%= @technpassport.price1 %></p></div>
+</div>
+<div class="form-group row-fluid">
+  <div class="span4"><p><b>№2 </b><%= @technpassport.manipulation2 %></p></div>
+  <div class="span5"><b>Цена </b><%= @technpassport.price2 %></p></div>
+</div>
+<div class="form-group row-fluid">
+  <div class="span4"><p><b>№3 </b><%= @technpassport.manipulation3 %></p></div>
+  <div class="span5"><b>Цена </b><%= @technpassport.price3 %></p></div>
+</div>
+<div class="form-group row-fluid">
+  <div class="span4"><p><b>№4 </b><%= @technpassport.manipulation4 %></p></div>
+  <div class="span5"><b>Цена </b><%= @technpassport.price4 %></p></div>
+</div>
+<p></p>
+<div class="form-group row-fluid">
+  <div class="span4"><p><b>Скидка </b><%= @technpassport.discount %>%</p></div>
+  <div class="span5"><b>Сумма </b><%= @technpassport.amount %> рублей</p></div>
+</div>
+
+<p><b>Оплачено </b><%= @technpassport.payment %> рублей</p>
+
+<p>Оплату принял________________ «» ____________201_ г.</p>
+<p></p>
+<p><b>С техпаспортом ознакомлен, с описанием дефектов изделия, определением % износа, правилами приема и выдачи заказа согласен:________________</b></p>
+
+
+<p>Оплачено _________ рублей</p>
+<p>Оплату принял________________ «» ____________201_ г.</p>
+
+
+
+<p>Оплату принял Все претензии к качеству оказания услуги могут быть предъявлены только в момент приема-сдачи заказа (ст. 29 п. 3 ЗЗПП). Заказчик, принявший изделие без проверки, лишается права на претензию и ссылки на явные недостатки в услуге, которые могли быть обнаружены при приемке вещи (ст. 720 п. 3 КГРФ). Заказ получил, претензий к качеству выполненной работы не имею:</p>
+<div style="height:20px"></div>
+<div class="form-group row-fluid">
+  <div class="span8"><p>____________________201_ г.</p></div>
+  <div class="span4"><p>__________________________</p></div>
+</div>
