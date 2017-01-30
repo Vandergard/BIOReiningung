@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   get 'clients/new'
 
-  get 'clients/search'
 
   #get 'present_informations/home'
   root 'present_informations#home'
