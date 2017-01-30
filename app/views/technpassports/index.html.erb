@@ -1,1 +1,15 @@
-<h1> ALL Technologich passports </h1>
+<% provide(:title, 'All passports') %>
+<h1>All passports</h1>
+
+<ul class="passports">
+  <% @technpassports.each do |technpassport| %>
+    <div class="form-group row-fluid">
+      <div class="span2"><p>Дата <b><%= technpassport.date_in %></b></p></div>
+      <div class="span1"><p>№ <%= link_to technpassport.id, :controller => :technpassports, :action => :edit, :id => technpassport.id %></p></div>
+      <div class="span2"><p>Фамилия <b><%= technpassport.vorname %></b></p></div>
+      <div class="span2"><p>Имя <b><%= technpassport.name %></b></p></div>
+      <div class="span2"><p>Сумма <b><%= technpassport.amount %></b></p></div>
+      <div class="span2"><p>Остаток <b><%= technpassport.debt %></b></p></div>
+    </div>
+  <% end %>
+</ul>

@@ -1,0 +1,147 @@
+<h1>Обновить состояние</h1>
+<h2>Технологический пасспорт №<%= @technpassport.id %> </h2>
+
+<div class="row-fluid">
+  <div class="span7 offset2">
+      <%= form_for(@technpassport) do |f| %>
+      <%= render 'shared/error_messages2' %>
+
+        <%= f.label :"Фамилия" %>
+        <%= f.text_field :vorname %>
+
+        <%= f.label :"Имя" %>
+        <%= f.text_field :name %>
+
+        <%= f.label :"Отчество" %>
+        <%= f.text_field :patronymic %>
+
+        <%= f.label :"Телефон" %>
+        <%= f.text_field :phone %>
+
+        <%= f.label :"Изделие" %>
+        <%= f.text_field :product %>
+
+        <%= f.label :"Состояние изделия" %>
+        <%= f.text_field :condition %>
+
+        <%= f.label :"Износ" %>
+        <%= f.text_field :wear %>
+
+        <%= f.label :"Время_носки" %>
+        <%= f.text_field :time_weared %>
+
+        <%= f.label :"Символы по уходу" %>
+        <%= f.text_field :care_symbols %>
+
+        <%= f.label :"Изделие подвергалось" %>
+        <%= f.text_field :undergo %>
+
+        <%= f.label :"Последствия" %>
+        <%= f.text_field :effects %>
+
+        <%= f.label :"Пятна" %>
+        <%= f.text_field :spots %>
+
+        <%= f.label :"Происхождение пятен со слов клиента" %>
+        <%= f.text_field :origin_spots %>
+
+        <%= f.label :"Прочие дефекты" %>
+        <%= f.text_field :other_defects %>
+
+        <%= f.label :"Проблемы цвета кожи" %>
+        <%= f.text_field :pr_scin_color %>
+
+        <%= f.label :"Проблемы цвета меха" %>
+        <%= f.text_field :pr_fur_color %>
+
+        <%= f.label :"Неустранимые механические повреждения" %>
+        <%= f.text_field :f_mechanical_damage %>
+
+        <%= f.label :"Особо заношенные места и места сильной засаленности" %>
+        <%= f.text_field :worn_pl %>
+
+        <%= f.label :"Наши гарантии" %>
+        <%= f.text_field :guarantee %>
+
+        <%= f.label :"Повреждения" %>
+        <%= f.text_field :damage %>
+
+        <div class="form-group row-fluid">
+         <div class="span1"></div>
+          <div class="span5"><%= f.label :"Наименование операции" %></div>
+          <div class="span5"><%= f.label :"Цена" %></div>
+        </div>
+
+        <div class="form-group row-fluid">
+          <div class="span1"><%= f.label :"№1" %></div>
+          <div class="span5"><%= f.text_field :manipulation1  %></div>
+          <div class="span5"><%= f.text_field :price1 %></div>
+        </div>
+
+        <div class="form-group row-fluid">
+          <div class="span1"><%= f.label :"№2" %></div>
+          <div class="span5"><%= f.text_field :manipulation2  %></div>
+          <div class="span5"><%= f.text_field :price2 %></div>
+
+        </div><div class="form-group row-fluid">
+          <div class="span1"><%= f.label :"№3" %></div>
+          <div class="span5"><%= f.text_field :manipulation3  %></div>
+          <div class="span5"><%= f.text_field :price3 %></div>
+        </div>
+
+        <div class="form-group row-fluid">
+          <div class="span1"><%= f.label :"№4" %></div>
+          <div class="span5"><%= f.text_field :manipulation4  %></div>
+          <div class="span5"><%= f.text_field :price4 %></div>
+        </div>
+
+        <div class="form-group row-fluid">
+          <div class="span1"></div>
+          <div class="span5">
+          <%= f.label :"Скидка" %>
+          <%= f.text_field :discount %>
+          </div>
+          <div class="span5">
+          <%= f.label :"Общая сумма" %>
+          <%= f.text_field :amount %>
+          </div>
+        </div>
+
+        <div class="form-group row-fluid">
+          <div class="span1"></div>
+          <div class="span5"><%= f.label :"Уже оплачено" %>
+          <%= f.text_field :payment,:readonly => true %>
+          </div>
+          <div class="span5">
+          <%= f.label :"К оплате" %>
+          <%= f.text_field :debt  %>
+          </div>
+        </div>
+
+        <div class="form-group row-fluid">
+          <div class="span6"></div>
+          <div class="span5">
+          <%= f.label :"Оплата" %>
+          <%= f.text_field :payment,:value => '' %>
+          </div>
+        </div>
+
+        <div class="form-group row-fluid">
+          <div class="span1"></div>
+          <div class="span5">
+          <%= f.label :"Дата_приема" %>
+          <%= f.text_field :date_in  %>
+          </div>
+          <div class="span5">
+          <%= f.label :"Дата выдачи" %>
+          <%= f.text_field :date_out %>
+          </div>
+        </div>
+
+        <div class="form-group row-fluid">
+          <div class="span12"></div>
+        </div>
+      <%= f.submit "Изменить", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

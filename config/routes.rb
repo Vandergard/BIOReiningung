@@ -4,17 +4,26 @@ Rails.application.routes.draw do
 
   get 'clients/new'
 
+  get 'clients/search'
+
   #get 'present_informations/home'
   root 'present_informations#home'
   resources :users
-  resources :clients
-  resources :technpassports do
-    resources :clients
+  resources :clients do
+    post 'search',         on: :collection
+    get  'search_clients', on: :collection
   end
+
+  resources :technpassports do
+    post 'search',                on: :collection
+    get  'search_technpassports', on: :collection
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+  #match '/search',  to: 'clients#search'        via: 'get'
   #get '/technpassports/:id', to: 'clients#create'
 
   #match '/create', to: 'technpassports#new',    via: 'get'

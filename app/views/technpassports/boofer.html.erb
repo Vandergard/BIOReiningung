@@ -1,83 +1,26 @@
-<h1>Создание технологического паспорта</h1>
+  def search
+    @clients = Client.find_by(search_params1)(3)||Client.find_by(search_params2)(3)||Client.find_by(search_params3)(3)
+        #redirect_to :controller => :clients, :action => :search_clients
+    render 'clients/search_clients'
+  end
 
-<div class="row">
-  <div class="span5 offset1">
-      <%= form_for(@technpassport) do |f| %>
-      <%= render 'shared/error_messages2' %>
+  def search_clients
+    @clients = Client.find_by(search_params1)(3)||Client.find_by(search_params2)(3)||Client.find_by(search_params3)(3)
+  end
 
-        <%= f.label :"Заказчик" %>
-        <%= f.text_field :customer %>
-
-        <%= f.label :"Имя" %>
-        <%= f.text_field :name %>
-
-        <%= f.label :"Фамилия" %>
-        <%= f.text_field :vorname %>
-
-
-        <%= f.label :"Отчество" %>
-        <%= f.text_field :patronymic %>
-
-        <%= f.label :"Телефон" %>
-        <%= f.text_field :phone %>
-
-        <%= f.label :"Дата_приема" %>
-        <%= f.text_field :date_in %>
-
-        <%= f.label :"Дата выдачи" %>
-        <%= f.text_field :date_out %>
-
-        <%= f.label :"Состояние изделия" %>
-        <%= f.text_field :condition %>
-
-        <%= f.label :"Износ" %>
-        <%= f.text_field :wear %>
-
-        <%= f.label :"Наши гарантии" %>
-        <%= f.text_field :guarantee %>
-
-        <%= f.label :"Повреждения" %>
-        <%= f.text_field :damage %>
-
-        <%= f.label :"Наименование операции" %>
-        <%= f.label :"№1" %>
-        <%= f.text_field :manipulation1 %>
-
-        <%= f.label :"№2" %>
-        <%= f.text_field :manipulation2 %>
-
-        <%= f.label :"№3" %>
-        <%= f.text_field :manipulation3 %>
-
-        <%= f.label :"№4" %>
-        <%= f.text_field :manipulation4 %>
-
-        <%= f.label :"Цена" %>
-        <%= f.text_field :price1 %>
-
-        <%= f.label :"Цена" %>
-        <%= f.text_field :price2 %>
-
-        <%= f.label :"Цена" %>
-        <%= f.text_field :price3 %>
-
-        <%= f.label :"Цена" %>
-        <%= f.text_field :price4 %>
-
-        <%= f.label :"Общая сумма" %>
-        <%= f.text_field :amount %>
-
-        <%= f.label :"Скидка" %>
-        <%= f.text_field :discount %>
-
-        <%= f.label :"Оплачено" %>
-        <%= f.text_field :payment %>
-
-        <%= f.label :"Остаток" %>
-        <%= f.text_field :debt %>
+  def client_params
+      params.require(:client).permit(:name, :phone, :vorname, :patronymic,
+                                     :sum, :date_in)
+  end
 
 
-      <%= f.submit "Создать", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
+    def search
+    if search_params1 ==nil
+
+    @clients = Client.where(search_params1)||Client.where(search_params2)||Client.where(search_params3)
+    render 'clients/search_clients'
+  end
+
+  def search_clients
+    @clients = Client.where(search_params1)||Client.where(search_params2)||Client.where(search_params3)
+  end
