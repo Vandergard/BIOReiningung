@@ -19,6 +19,11 @@ class TechnpassportsController < ApplicationController
     else
       render 'new'
     end
+    respond_to do |format|
+      format.html {}
+      format.js   {render json: @technpassport}
+      format.json {}
+    end
   end
 
   def index

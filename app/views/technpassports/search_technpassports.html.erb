@@ -39,15 +39,6 @@
         <%= f.label :"Последствия" %>
         <%= f.text_field :effects %>
 
-        <%= f.label :"Пятна" %>
-        <%= f.text_field :spots %>
-
-        <%= f.label :"Происхождение пятен со слов клиента" %>
-        <%= f.text_field :origin_spots %>
-
-        <%= f.label :"Прочие дефекты" %>
-        <%= f.text_field :other_defects %>
-
         <%= f.label :"Проблемы цвета кожи" %>
         <%= f.text_field :pr_scin_color %>
 
@@ -57,14 +48,23 @@
         <%= f.label :"Неустранимые механические повреждения" %>
         <%= f.text_field :f_mechanical_damage %>
 
+        <%= f.label :"Повреждения" %>
+        <%= f.text_field :damage %>
+
         <%= f.label :"Особо заношенные места и места сильной засаленности" %>
         <%= f.text_field :worn_pl %>
 
+        <%= f.label :"Пятна" %>
+        <%= f.text_field :spots %>
+
+        <%= f.label :"Происхождение пятен со слов клиента" %>
+        <%= f.text_field :origin_spots %>
+
+        <%= f.label :"Прочие дефекты" %>
+        <%= f.text_field :other_defects %>
+
         <%= f.label :"Наши гарантии" %>
         <%= f.text_field :guarantee %>
-
-        <%= f.label :"Повреждения" %>
-        <%= f.text_field :damage %>
 
         <div class="form-group row-fluid">
          <div class="span1"></div>

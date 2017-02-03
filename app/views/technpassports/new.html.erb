@@ -1,3 +1,28 @@
+<script>
+var f = function() {
+  var v1 = document.getElementById('technpassport_price1').value;
+  var v2 = document.getElementById('technpassport_price2').value;
+  var v3 = document.getElementById('technpassport_price3').value;
+  var v4 = document.getElementById('technpassport_price4').value;
+  var dis = document.getElementById('technpassport_discount').value
+  var sumElement = document.getElementById('technpassport_amount');
+  var sumDisEl = document.getElementById('technpassport_amoDis');
+  if(!!v1 && !!v2 && !v3 && !v4) {
+    sumElement.value = parseFloat(v1) + parseFloat(v2);
+  }
+  else if (!!v1 && !!v2 && !!v3 && !v4){
+    sumElement.value = parseFloat(v1) + parseFloat(v2) + parseFloat(v3);
+  }
+  else if (!!v1 && !!v2 && !!v3 && !!v4) {
+    sumElement.value = parseFloat(v1) + parseFloat(v2) + parseFloat(v3) + parseFloat(v4);
+  }
+  else {
+  sumElement.value = parseFloat(v1);
+  }
+  sumDisEl.value = parseFloat(sumElement)*parseFloat(dis);
+}
+</script>
+
 <h1>Создание технологического паспорта</h1>
 
 <div class="row-fluid">
@@ -38,15 +63,6 @@
         <%= f.label :"Последствия" %>
         <%= f.text_field :effects %>
 
-        <%= f.label :"Пятна" %>
-        <%= f.text_field :spots %>
-
-        <%= f.label :"Происхождение пятен со слов клиента" %>
-        <%= f.text_field :origin_spots %>
-
-        <%= f.label :"Прочие дефекты" %>
-        <%= f.text_field :other_defects %>
-
         <%= f.label :"Проблемы цвета кожи" %>
         <%= f.text_field :pr_scin_color %>
 
@@ -56,14 +72,23 @@
         <%= f.label :"Неустранимые механические повреждения" %>
         <%= f.text_field :f_mechanical_damage %>
 
+        <%= f.label :"Повреждения" %>
+        <%= f.text_field :damage %>
+
         <%= f.label :"Особо заношенные места и места сильной засаленности" %>
         <%= f.text_field :worn_pl %>
 
+        <%= f.label :"Пятна" %>
+        <%= f.text_field :spots %>
+
+        <%= f.label :"Происхождение пятен со слов клиента" %>
+        <%= f.text_field :origin_spots %>
+
+        <%= f.label :"Прочие дефекты" %>
+        <%= f.text_field :other_defects %>
+
         <%= f.label :"Наши гарантии" %>
         <%= f.text_field :guarantee %>
-
-        <%= f.label :"Повреждения" %>
-        <%= f.text_field :damage %>
 
         <div class="form-group row-fluid">
          <div class="span1"></div>
@@ -74,37 +99,39 @@
         <div class="form-group row-fluid">
           <div class="span1"><%= f.label :"№1" %></div>
           <div class="span5"><%= f.text_field :manipulation1  %></div>
-          <div class="span5"><%= f.text_field :price1 %></div>
+          <div class="span5", onkeyup="f()"><%= f.text_field :price1 %></div>
         </div>
 
         <div class="form-group row-fluid">
           <div class="span1"><%= f.label :"№2" %></div>
           <div class="span5"><%= f.text_field :manipulation2  %></div>
-          <div class="span5"><%= f.text_field :price2 %></div>
+          <div class="span5", onkeyup="f()"><%= f.text_field :price2 %></div>
 
         </div><div class="form-group row-fluid">
           <div class="span1"><%= f.label :"№3" %></div>
           <div class="span5"><%= f.text_field :manipulation3  %></div>
-          <div class="span5"><%= f.text_field :price3 %></div>
+          <div class="span5", onkeyup="f()"><%= f.text_field :price3 %></div>
         </div>
 
         <div class="form-group row-fluid">
           <div class="span1"><%= f.label :"№4" %></div>
           <div class="span5"><%= f.text_field :manipulation4  %></div>
-          <div class="span5"><%= f.text_field :price4 %></div>
+          <div class="span5", onkeyup="f()"><%= f.text_field :price4 %></div>
         </div>
 
         <div class="form-group row-fluid">
           <div class="span1"></div>
           <div class="span5">
           <%= f.label :"Скидка" %>
-          <%= f.text_field :discount  %>
+          <b onkeyup="f()"><%= f.text_field :discount  %></b>
           </div>
           <div class="span5">
-          <%= f.label :"Общая сумма" %>
-          <%= f.text_field :amount %>
+            <%= f.label :"Общая сумма" %>
+            <%= f.text_field :amount  %>
           </div>
         </div>
+
+
 
         <div class="form-group row-fluid">
           <div class="span6"></div>
@@ -114,13 +141,6 @@
           </div>
         </div>
 
-        <div class="form-group row-fluid">
-          <div class="span6"></div>
-          <div class="span5">
-          <%= f.label :"Остаток" %>
-          <%= f.text_field :debt  %>
-          </div>
-        </div>
 
         <div class="form-group row-fluid">
           <div class="span1"></div>
